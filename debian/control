@@ -1,0 +1,16 @@
+Source: cdos-picturebrowser
+Section: x11
+Priority: optional
+Maintainer: CDOS Support Team <support_os@cpu-os.ac.cn>
+Build-Depends: debhelper (>= 8.0.0),qt5-qmake,qtbase5-dev,qt5-default,libqt5svg5,libqt5svg5-dev,qml-module-qtwebkit,libqt5webkit5-dev,imagemagick,xdg-utils,libqt5core5a (>= 5.0.0),libqt5gui5 (>= 5.0.0),libqt5widgets5 (>= 5.0.0),hplip,cups
+Standards-Version: 3.9.4
+Homepage: git@192.168.8.102:desktop_2015/nfs-picturebrowser.git
+#Vcs-Git: git://git.debian.org/collab-maint/nfs-picturebrowser.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/nfs-picturebrowser.git;a=summary
+
+Package: cdos-picturebrowser
+Architecture: amd64
+Depends: imagemagick,xdg-utils,libqt5core5a (>= 5.0.0),libqt5gui5 (>= 5.0.0),libqt5widgets5 (>= 5.0.0)
+Maintainer: CDOS Support Team <support_os@cpu-os.ac.cn>
+Description: picture browser in nfs-desktop
+ The software is a opensource package from jackey <huangjie@nfschina.com>

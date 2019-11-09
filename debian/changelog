@@ -1,0 +1,254 @@
+cdos-picturebrowser (1.0.9-39) 3.0; urgency=low
+
+  * 0354289: 看图工具-“打印预览”中的打印设置窗口均为英文显示，且打印设置未生效。另外，“打印”也存在此问题。
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Mon, 28 Oct 2019 10:20:18 +0800
+
+cdos-picturebrowser (1.0.9-38) 3.0; urgency=low
+
+  * 543: PrintPreview Dialog的汉化问题。
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Fri, 16 Aug 2019 10:20:18 +0800
+
+cdos-picturebrowser (1.0.9-37) 3.0; urgency=low
+
+  * 352748:看图工具-建议底部的工具栏默认不隐藏.
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Thu, 5 Jul 2019 10:51:18 +0800
+
+cdos-picturebrowser (1.0.9-36) 3.0; urgency=low
+
+  * 0352747:目前最大化/窗口化这个切换有时候会有bug。改变窗口大小，最大化，拖动，还原成窗口化这几个动作组合操作一下，很容易出现窗口大小显示不符合预期的问题。目前看图软件窗口大小控制这方面比较不好.
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Thu, 4 Jul 2019 18:09:18 +0800
+
+cdos-picturebrowser (1.0.9-35) 3.0; urgency=low
+
+  * change desktop install
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Fri, 22 Mar 2019 10:55:18 +0800
+
+cdos-picturebrowser (1.0.9-34) 3.0; urgency=low
+
+  * 修改位置.
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  The, 7 Mar 2019 17:51:18 +0800
+
+cdos-picturebrowser (1.0.9-33) 3.0; urgency=low
+
+  * 修改图标
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Fri, 1 Mar 2019 13:51:18 +0800
+
+cdos-picturebrowser (1.0.9-32) 3.0; urgency=low
+
+  * 提交3.1版本升级
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Fri, 1 Mar 2019 13:51:18 +0800
+cdos-picturebrowser (1.0.9-31) 3.0; urgency=low
+
+  * 提交3.1版本升级
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Fri, 1 Mar 2019 13:51:18 +0800
+
+cdos-picturebrowser (1.0.9-30) 3.0; urgency=low
+
+  * 提交3.1版本升级
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Fri, 1 Mar 2019 13:51:18 +0800
+
+cdos-picturebrowser (1.0.9-29) 3.0; urgency=low
+
+  * 提交3.1版本升级
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Fri, 1 Mar 2019 13:51:18 +0800
+
+cdos-picturebrowser (1.0.9-28) 3.0; urgency=low
+
+  * 提交3.1版本升级
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Fri, 1 Mar 2019 13:51:18 +0800
+
+cdos-picturebrowser (1.0.9-27) 3.0; urgency=low
+
+  * 提交3.1版本升级
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Fri, 1 Mar 2019 13:51:18 +0800
+
+cdos-picturebrowser (1.0.9-26) 3.0; urgency=low
+
+  * 345878:看图工具-打开图片，浏览本地路径下方显示文件类型为“images”，设置用户头像打开本地图片显示为“图像”，两处不一致
+  * 问题原因：未进行本地化
+  * 修改方案：进行本地化
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Thu, 18 Jan 2018 09:48:18 +0800
+
+cdos-picturebrowser (1.0.9-25) 3.0; urgency=low
+
+  * 237746:基础版系统不能打印图片，建议增加打印图片需求
+  * 问题原因：无次功能
+  * 修改方案：在右键菜单中添加打印和打印预览功能
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Wed, 16 Jan 2018 15:05:18 +0800
+
+cdos-picturebrowser (1.0.9-24) 3.0; urgency=low
+
+  * 0342714: 打开‘看图工具’，点击‘打开图片’按钮可以显示所有文件格式；打开图片后     再右键选择‘打开图片’只识别图片格式；两处显示的不一致; 
+  *0342712: 打开‘看图工具’，点击‘打开图片’按钮选择一个视频文件打开，软件消失无任    何警告提示信息；
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Tue, 12 Dec 2017 14:41:18 +0800
+
+cdos-picturebrowser (1.0.9-23) 3.0; urgency=low
+
+  * 0237799: 本地化支持-英文系统下，文件管理器的home->help->All
+    topics弹出的系统帮助文档中存在多处中文
+  * 看图工具存在237799所述问题
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Wed, 22 Nov 2017 10:08:18 +0800
+
+cdos-picturebrowser (1.0.9-22) 3.0; urgency=low
+
+  * change englishname
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Mon, 7 Nov 2017 10:08:18 +0800
+
+cdos-picturebrowser (1.0.9-21) 3.0; urgency=low
+
+  * change copyright
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Mon, 24 Jul 2017 10:08:18 +0800
+
+cdos-picturebrowser (1.0.9-20) 3.0; urgency=low
+
+  * [234273]: 左右箭头设置未点击确定就生效
+  * 问题原因：在勾选设置的时候直接发送信号生效。但是点击确定和取消的时候没做处理
+  * 修改方案：在确定和取消的时候添加信号，并对状态进行处理
+  
+  * [234274]: 设置缩略图显示没有立即生效，而是在重启后生效
+  * 问题原因：在设置的时候没有在确定的时候发送生效信号
+  * 修改方案：创建一个显示缩略图的信号和接口函数，在确定的时候发送信号
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Tue, 11 Jul 2017 09:42:18 +0800
+
+cdos-picturebrowser (1.0.9-19) 3.0; urgency=low
+
+  * 系统设置-默认程序-可以动媒体-照片下拉框选项均无效
+
+ -- CDOS Support Team <support_os@cpu-os.ac.cn>  Mon, 12 Jun 2017 16:18:18 +0800
+
+cdos-picturebrowser (1.0.9-18) 3.0; urgency=low
+  
+  *	修改看图工具-设置模块-习惯设置-保存窗口大小功能无效；
+  * 修改看图工具-设置模块-常规设置-默认打开缩略图更换目录后无效。
+
+ -- dongzhen <dongzhen_hlj@nfs-china.com>  Mon, 12 Jun 2017 13:30:18 +0800
+
+cdos-picturebrowser (1.0.9-17) unstable; urgency=low
+
+  *修改删除图片后看图软件异常退出.
+  *修改工具栏1:1图片tooltip含义问题。
+
+ -- feifei <feifei@nfs-hlj.com>  Tue, 6 Jun 2017 17:58:18 +0800
+
+cdos-picturebrowser (1.0.9-16) unstable; urgency=low
+
+  *[232838]:实际尺寸和自适应按钮提示信息一样　
+  *[问题描述]：实际尺寸和自适应按钮提示信息一样
+  *[问题原因]：设置tooltip相同
+
+ -- zhanglei <zhanglei_hlj@nfs-china.com> Fri, 28 Apr 2017 17:15:00 +0800
+
+cdos-picturebrowser (1.0.9-15) unstable; urgency=low
+
+  *修改安装依赖.
+
+ -- zhanglei <zhanglei_hlj@nfs-china.com> Wed, 29 Mar 2017 14:37:00 +0800
+
+cdos-picturebrowser (1.0.9-14) unstable; urgency=low
+
+  *修改右键另存为崩溃.
+
+ -- zhanglei <zhanglei_hlj@nfs-china.com> Mon, 27 Mar 2017 13:51:00 +0800
+
+cdos-picturebrowser (1.0.9-13) unstable; urgency=low
+
+  *修改无法设置背景.
+
+ -- dongzhen <dongzhen_hlj@nfs-china.com> Mon, 27 Mar 2017 11:24:00 +0800
+
+cdos-picturebrowser (1.0.9-12) unstable; urgency=low
+  *平台适配.
+
+ -- zhanglei <zhanglei_hlj@nfs-china.com> Mon, 20 Mar 2017 16:46:00 +0800
+
+cdos-picturebrowser (1.0.9-11) unstable; urgency=low
+  *修改退出全屏显示界面出错问题.
+
+ -- zhuangzikaile <kaile@nfs-hlj.com>  Fri, 17 Mar 2017 09:30:00 +0800
+
+cdos-picturebrowser (1.0.9-10) unstable; urgency=low
+  *修改最小化不可用问题.
+
+ -- dongzhen <dongzhen_hlj@nfs-china.com>  Tue, 07 Mar 2017 16:38:00 +0800
+
+cdos-picturebrowser (1.0.9-9) unstable; urgency=low
+  *修改copyright.
+
+ -- dongzhen <dongzhen_hlj@nfs-china.com>  Tue, 07 Mar 2017 15:04:00 +0800
+
+cdos-picturebrowser (1.0.9-8) unstable; urgency=low
+  *修改2.0系统汉化问题及去掉保存功能。
+ 
+ -- dongzhen <dongzhen_hlj@nfs-china.com>  Tue, 07 Mar 2017 13:51:00 +0800
+
+cdos-picturebrowser (1.0.9-6) unstable; urgency=low
+  * [229787] : 打开图片窗口信息未汉化.
+  * [229784] : 打开图片窗口空白处右键弹出菜单信息汉化.
+  * [229785] : 打开图片窗口在目录右键弹出菜单未汉化。
+  * [229786] : 打开图片窗口工具栏所有图标悬浮均未汉化。
+  * 36856、36854、36862、36858、36846
+  * 问题原因:qt版本问题
+  * 解决方法: 去掉源码包自带的qt版本，使用系统自带的5.6版本；修改源码包未汉化部分。
+
+ -- shuangjun <shuangjun_hlj@nfs-china.com>  Tue, 21 Feb 2017 14:21:00 +0800
+
+cdos-picturebrowser (1.0.9-5) unstable; urgency=low
+
+  * [229593] : 缩放时,图标显示与其他应用程序不同,且鼠标必须在看图工具边框外才能缩放
+  * 问题原因: 设置窗口的问题
+  * 解决方法: 优化窗口设置,用户只要鼠标状态变成双向箭头,就可进行缩放
+
+ -- shuangjun <shuangjun_hlj@nfs-china.com>  Tue, 21 Feb 2017 9:38:00 +0800
+
+cdos-picturebrowser (1.0.9-4) unstable; urgency=low
+
+  * [229783] ［36846］ : 打开文件按钮名称和窗口保持一致
+  * 问题原因：代码编写问题
+  * 问题解决方法：代码修改
+
+ -- shuangjun <shuangjun_hlj@nfs-china.com>  Fri, 17 Feb 2017 14:38:00 +0800
+  
+cdos-picturebrowser (1.0.9-3) unstable; urgency=low
+
+  * 修改了最大化再最小化后不能恢复的问题
+
+ -- support_os <support_os@sari.ac.cn>  Wed, 18 Jan 2017 14:38:00 +0800
+
+cdos-picturebrowser (1.0.9-2) unstable; urgency=low
+
+  * 去掉右键保存
+  * 将右键打开文件改为打开图片
+  * 恢复默认设置添加提示
+  * 实现删除图片功能
+  * 另存为时对非法字符进行判断
+  * 底边工具栏双击改为不能最大化
+  * 设置选项中幻灯片时间设置与实际幻灯片切换时间同步
+  * 添加Qt5库，解决汉化、解决最小化，恢复，最小化无法重复实现的问题
+
+ -- support_os <support_os@sari.ac.cn>  Thu, 12 Jan 2017 17:22:00 +0800
+
+cdos-picturebrowser (1.0.9-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- jackey <support_os@sari.ac.cn>  Mon, 12 Dec 2016 15:04:46 +0800

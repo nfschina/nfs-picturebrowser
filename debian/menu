@@ -1,0 +1,2 @@
+?package(cdos-picturebrowser):needs="X11" section="Applications/Viewers"\
+  title="cdos-picturebrowser" hints="Images" longtitle="View many different types of images" icon="/usr/share/pixmaps/cdos-picturebrowser.png" command="/usr/bin/cdos-picturebrowser"

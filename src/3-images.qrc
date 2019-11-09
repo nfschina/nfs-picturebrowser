@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/prefix3">
+        <file>3-images/left_arrow.png</file>
+        <file>3-images/按钮_关闭_常态.png</file>
+        <file>3-images/按钮_关闭_点击.png</file>
+        <file>3-images/按钮_关闭_焦点.png</file>
+        <file>3-images/帮助.png</file>
+        <file>3-images/帮助-当前.png</file>
+        <file>3-images/标题底色.png</file>
+        <file>3-images/波纹效果预览.png</file>
+        <file>3-images/常规设置.png</file>
+        <file>3-images/常规设置-当前.png</file>
+        <file>3-images/幻灯片.png</file>
+        <file>3-images/幻灯片-当前.png</file>
+        <file>3-images/幻灯片-竖分割线.png</file>
+        <file>3-images/幻灯片-下拉框.png</file>
+        <file>3-images/幻灯片-预览.png</file>
+        <file>3-images/间隔秒数框.png</file>
+        <file>3-images/减少_常态.png</file>
+        <file>3-images/减少_点击.png</file>
+        <file>3-images/减少_焦点.png</file>
+        <file>3-images/框体分割线.png</file>
+        <file>3-images/六字分割线.png</file>
+        <file>3-images/取消_常态.png</file>
+        <file>3-images/取消_点击.png</file>
+        <file>3-images/取消_焦点.png</file>
+        <file>3-images/确定_常态.png</file>
+        <file>3-images/确定_点击.png</file>
+        <file>3-images/确定_焦点.png</file>
+        <file>3-images/设置-底框.png</file>
+        <file>3-images/四字分割线.png</file>
+        <file>3-images/习惯设置.png</file>
+        <file>3-images/习惯设置-当前.png</file>
+        <file>3-images/下拉箭头_常态.png</file>
+        <file>3-images/下拉箭头_焦点+点击.png</file>
+        <file>3-images/选中标题.png</file>
+        <file>3-images/应用_常态.png</file>
+        <file>3-images/应用_点击.png</file>
+        <file>3-images/应用_焦点.png</file>
+        <file>3-images/增加_常态.png</file>
+        <file>3-images/增加_点击.png</file>
+        <file>3-images/增加_焦点.png</file>
+    </qresource>
+</RCC>

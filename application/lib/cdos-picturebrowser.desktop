@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=NFS Picture Browser
+Comment=图片查看器
+Icon=/usr/share/pixmaps/cdos-picturebrowser.png
+Exec=/usr/bin/cdos-picturebrowser %U
+Terminal=false
+Type=Application
+Categories=Graphics;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=PICTUREBROWSER
+X-GNOME-Bugzilla-Component=General
+X-GNOME-Bugzilla-Version=1.0.6
+StartupNotify=true
+Keywords=Run;
+Actions=New
+Name[zh_CN]=看图工具
+MimeType=image/bmp;image/x-bmp;image/bitmap;image/gif;image/tif;image/tiff;image/jpg;image/jpeg;image/jpeg2000;image/jpc;image/j2k;image/jpf;image/png;image/pbm;image/pgm;image/psd;image/jp2;image/x-ico;image/icns;image/dib;image/x-pcx;image/x-portable-bitmap;image/x-psd;image/x-xcf;image/x-compressed-xcf;image/svg;image/svg+xml;image/svgz;image/pnm;image/ras;image/wbmp;image/ani;image/eps;image/ppm;image/xbm;image/xpm;

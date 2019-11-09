@@ -1,0 +1,4 @@
+src/cdos-picturebrowser_en.qm  /usr/share/cdos-picturebrowser/application/cdos-picturebrowser/translations
+src/qt_zh_CN.qm  /usr/share/cdos-picturebrowser/application/cdos-picturebrowser/translations
+application/lib/cdos-picturebrowser.png  /usr/share/pixmaps/
+application/lib/cdos-picturebrowser.desktop  /usr/share/applications/

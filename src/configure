@@ -1,0 +1,6 @@
+#!/bin/bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+#ln -s /home/huangjie/Qt5.4.2/5.4/gcc_64/bin/qmake /usr/bin/nfs-qmake	
+qmake picturebrowser.pro -r -spec linux-g++ CONFIG+=debug
+echo -e "run configure Ok!"

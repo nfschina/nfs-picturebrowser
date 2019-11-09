@@ -1,0 +1,138 @@
+#!/bin/sh
+# postinst script for cdos-picturebrowser
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <postinst> `abort-remove'
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see http://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+
+
+case "$1" in
+    configure)
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#install the dependence lib
+dire="/usr/share/cdos-picturebrowser"
+#tar -zxvf /usr/share/cdos-picturebrowser/application/cdos-picturebrowser.tar.gz
+#tar -zxf $dire/application/cdos-picturebrowser/cdos-picturebrowser.tar.gz -C $dire/application/cdos-picturebrowser/
+
+picturebrowser="/usr/bin/cdos-picturebrowser"
+if [ -f $picturebrowser ];then
+	rm -f $picturebrowser
+else
+	echo "start to make a soft link !"	
+fi
+
+ln -s $dire/application/cdos-picturebrowser/cdos-picturebrowser $picturebrowser
+cp -arf $dire/application/lib/cdos-picturebrowser.png  /usr/share/pixmaps/
+cp -arf $dire/application/lib/cdos-picturebrowser.desktop  /usr/share/applications/
+
+#更新cache文件
+#update-mime-database /usr/share/mime/
+#更新数据库
+#update-desktop-database /usr/share/applications/
+
+#PROFILE=$HOME"/.local/share/applications/"
+#如果文件夹不存在，创建文件夹
+#if [ ! -d $PROFILE ]; then
+# mkdir $PROFILE
+#fi
+
+#cp -arf $dire/application/lib/cdos-picturebrowser.desktop  $PROFILE
+
+
+#设置图片默认打开方式
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/bmp
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/bitmap
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/gif
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/tif
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/tiff
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/jpg
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/jpeg
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/jpeg2000
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/jpc
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/j2k
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/jpf
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/png
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/pbm
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/pgm
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/x-psd
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/jp2
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/x-ico
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/icn
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/dib
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/x-pcx
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/x-xcf
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/svg+xml
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/svgz
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/pnm
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/ras
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/wbmp
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/ani
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/eps
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/ppm
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/xbm
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/xpm
+
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/BMP
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/BITMAP
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/GIF
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/TIF
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/TIFF
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/JPG
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/JPEG
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/JPEG2000
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/JPCjpc
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/J2K
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/JPF
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/PNG
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/PBM
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/PGM
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/X-PSD
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/JP2
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/X-ICO
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/ICN
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/DIB
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/X-PCX
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/X-XCF
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/SVG+XML
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/SVGZ
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/PNM
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/RAS
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/WBMP
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/ANI
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/EPS
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/PPM
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/XBM
+#xdg-mime default /usr/share/applications/cdos-picturebrowser.desktop image/XPM
+
+
+rm -f /usr/share/applications/display.im6.desktop
+echo "Finished to install cdos-picturebrowser"
+/etc/init.d/cups restart
+# dh_installdeb will replace this with shell code automatically
+# generated by other debhelper scripts.
+
+#DEBHELPER#
+
+exit 0

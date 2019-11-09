@@ -1,0 +1,54 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+# see EXAMPLES in dpkg-buildflags(1) and read /usr/share/dpkg/*
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/default.mk
+
+%:
+	dh $@ 
+
+#override_dh_testdir:
+
+#override_dh_auto_clean:
+
+#override_dh_clean:
+
+#build package
+override_dh_testdir:
+
+override_dh_auto_configure:
+	qmake ./src/cdos-picturebrowser.pro -r -spec linux-g++ CONFIG+=debug	
+
+#override_dh_auto_build:
+
+override_dh_auto_test:	
+#	cp ./picturebrowser ./debian/cdos-picturebrowser/usr/share/application/picturebrowser
+
+override_dh_perl:
+#	install -g 0 -o 0 -d debian/cdos-picturebrowser/usr/share/cdos-picturebrowser/application/picturebrowser
+	install -g 0 -o 0 -d debian/cdos-picturebrowser/usr/share/cdos-picturebrowser/application/lib
+	install -g 0 -o 0 -d debian/cdos-picturebrowser/usr/share/cdos-picturebrowser/application/cdos-picturebrowser/data	
+	
+	install -g 0 -o 0 -d debian/cdos-picturebrowser/usr/share/cdos-picturebrowser/application/cdos-picturebrowser/platformthemes 
+	install -g 0 -o 0 -d debian/cdos-picturebrowser/usr/share/cdos-picturebrowser/application/cdos-picturebrowser/data	
+#install file
+	install -g 0 -o 0 -m 755 -p cdos-picturebrowser debian/cdos-picturebrowser/usr/share/cdos-picturebrowser/application/cdos-picturebrowser/cdos-picturebrowser
+#	install -g 0 -o 0 -m 644 src/data/version application/data/version
+#install lib
+	install -g 0 -o 0 -m 644 -p application/platformthemes/libqgtk2.so debian/cdos-picturebrowser/usr/share/cdos-picturebrowser/application/cdos-picturebrowser/platformthemes/libqgtk2.so
+#mimeapps.list
+#	install -g 0 -o 0 -m 644 -p application/lib/mimeapps.list debian/cdos-picturebrowser/usr/share/cdos-picturebrowser/application/lib/mimeapps.list
+#picturebrowser.desktop
+	install -g 0 -o 0 -m 644 -p application/lib/cdos-picturebrowser.desktop debian/cdos-picturebrowser/usr/share/cdos-picturebrowser/application/lib/cdos-picturebrowser.desktop
+#picturebrowser.png
+	install -g 0 -o 0 -m 644 -p application/lib/cdos-picturebrowser.png debian/cdos-picturebrowser/usr/share/cdos-picturebrowser/application/lib/cdos-picturebrowser.png
+#version data
+	install -g 0 -o 0 -m 644 -p src/data/version debian/cdos-picturebrowser/usr/share/cdos-picturebrowser/application/cdos-picturebrowser/data/version
+
+override_dh_shlibdeps:
+	
+
+	

@@ -1,0 +1,193 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ cdos-picturebrowser (1.0.9-19) 3.0; urgency=low
+ .
+   * 系统设置-默认程序-可以动媒体-照片下拉框选项均无效
+Author: CDOS Support Team <support_os@cpu-os.ac.cn>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2017-07-11
+
+--- cdos-picturebrowser-1.0.9.orig/src/maintaskwidget.cpp
++++ cdos-picturebrowser-1.0.9/src/maintaskwidget.cpp
+@@ -366,7 +366,6 @@ void mainTaskWidget::resizeEvent(QResize
+     mainTaskWidgetHeight = this->height();
+ 
+    int availableHeigth = QApplication::desktop()->availableGeometry().bottomLeft().y();
+-
+    //非全屏时
+     if(!parentWidget()->parentWidget()->parentWidget()->isFullScreen())
+     {
+@@ -589,7 +588,15 @@ void mainTaskWidget::slot_opensetUpDialo
+     connect(this->t_setUpDialog->m_normalWidget,SIGNAL(sig_normalSetting1(bool)),this,SIGNAL(sig_normalSetting1(bool)));
+     connect(this->t_setUpDialog->m_normalWidget,SIGNAL(sig_normalSetting3(bool)),this,SLOT(slot_normalSetting3(bool)));
+     connect(this->t_setUpDialog->m_normalWidget,SIGNAL(sig_normalSetting2(bool)),this,SLOT(slot_normalSetting2(bool)));
+-    connect(this->t_setUpDialog->m_normalWidget,SIGNAL(sig_normalSetting4(bool)),this,SLOT(slot_normalSetting4(bool)));
++   connect(this->t_setUpDialog->m_normalWidget,SIGNAL(sig_normalSetting4(bool)),this,SLOT(slot_normalSetting4(bool)));
++   connect(this->t_setUpDialog->m_normalWidget,SIGNAL(sig_normalSetting5(bool)),this,SLOT(slot_normalSetting5(bool)));
++
++    connect(this->t_setUpDialog,SIGNAL(sig_normalSetting1(bool)),this,SIGNAL(sig_normalSetting1(bool)));
++    connect(this->t_setUpDialog,SIGNAL(sig_normalSetting3(bool)),this,SLOT(slot_normalSetting3(bool)));
++    connect(this->t_setUpDialog,SIGNAL(sig_normalSetting2(bool)),this,SLOT(slot_normalSetting2(bool)));
++    connect(this->t_setUpDialog,SIGNAL(sig_normalSetting4(bool)),this,SLOT(slot_normalSetting4(bool)));
++    connect(this->t_setUpDialog,SIGNAL(sig_normalSetting5(bool)),this,SLOT(slot_normalSetting5(bool)));
++
+ 
+     connect(this->t_setUpDialog,SIGNAL(sig_sendSlideSetInfo(QString)),this,SLOT(slot_recvSlideSetInfo(QString)));
+     t_setUpDialog->show();
+@@ -622,6 +629,32 @@ void mainTaskWidget::slot_normalSetting4
+ {
+     this->normalSet4State = ischecked;
+ }
++void mainTaskWidget::slot_normalSetting5(bool ischecked)
++{
++   qDebug()<<"slot_normalSetting5";
++    if(ischecked)
++    {
++        if(!this->isFullScreen())
++        {
++            m_bottomWidget->setGeometry(0, parentWidget()->height() - (TOOLBARHEIGTH + THUMBNAILHEIGTH) - 0,
++                     parentWidget()->width(), (TOOLBARHEIGTH+ THUMBNAILHEIGTH));
++        }
++        else
++        {
++            m_bottomWidget->setGeometry(0, parentWidget()->height() - (SMALLTOOLBARHEIGTH + THUMBNAILHEIGTH) - DISTANCE,
++                     parentWidget()->width(), (SMALLTOOLBARHEIGTH+ THUMBNAILHEIGTH));
++        }
++       m_bottomWidget->m_thumbnailView->show();
++       m_bottomWidget->m_thumbnailView->setShowOrHide(Show);
++    }
++    else
++    {
++        m_bottomWidget->m_thumbnailView->hide();
++        m_bottomWidget->m_thumbnailView->setShowOrHide(Hide);
++    }
++
++
++}
+ 
+ void mainTaskWidget::slot_normalSetting2(bool ischecked)
+ {
+--- cdos-picturebrowser-1.0.9.orig/src/maintaskwidget.h
++++ cdos-picturebrowser-1.0.9/src/maintaskwidget.h
+@@ -289,6 +289,8 @@ public slots:
+     void slot_normalSetting2(bool ischecked);
+     void slot_normalSetting3(bool ischecked);
+     void slot_normalSetting4(bool ischecked);
++    void slot_normalSetting5(bool ischecked);
++
+ 
+     void slot_recvSlideSetInfo(QString setInfo);
+ 	void slot_picInfoClose();
+--- cdos-picturebrowser-1.0.9.orig/src/setupdialog.cpp
++++ cdos-picturebrowser-1.0.9/src/setupdialog.cpp
+@@ -107,6 +107,8 @@ setUpDialog::setUpDialog(QWidget *parent
+     connect(t_3_item, SIGNAL(sig_sendId(int)), t_stackedWidget, SLOT(setCurrentIndex(int)));
+     connect(t_4_item, SIGNAL(sig_sendId(int)), t_stackedWidget, SLOT(setCurrentIndex(int)));
+ 
++    init_normalwidget= m_normalWidget->getNormalWidgetConfig();
++qDebug()<<"zlzlzlzllllllllll"<<init_normalwidget;
+     QHBoxLayout *t_1_hl = new QHBoxLayout;
+     t_1_hl->setMargin(0);
+     t_1_hl->setSpacing(0);
+@@ -120,7 +122,7 @@ setUpDialog::setUpDialog(QWidget *parent
+ 
+     bottomWidget *t_bottomWidget = new bottomWidget;
+     connect(t_bottomWidget->m_ok, SIGNAL(clicked()), this, SLOT(slot_confirmConfig()));
+-    connect(t_bottomWidget->m_cancel, SIGNAL(clicked()) ,this, SLOT(close()));
++    connect(t_bottomWidget->m_cancel, SIGNAL(clicked()) ,this, SLOT(slot_cancel()));
+ //reset all the software to default
+     connect(t_bottomWidget->m_recovery, SIGNAL(clicked()), this, SLOT(slot_recovery()));
+ 
+@@ -144,7 +146,7 @@ setUpDialog::setUpDialog(QWidget *parent
+ 
+     this->setLayout(t_1_vl);
+ 
+-    connect(t_titleBar->m_close, SIGNAL(clicked()), this, SLOT(close()));
++    connect(t_titleBar->m_close, SIGNAL(clicked()), this, SLOT(slot_cancel()));
+ 
+ }
+ 
+@@ -180,6 +182,19 @@ void setUpDialog::slot_confirmConfig()
+ {
+ 
+     configList[0] = m_normalWidget->getNormalWidgetConfig();
++
++    QVariant normal_1=configList[0].mid(0,1);
++    QVariant normal_2=configList[0].mid(1,1);
++    QVariant normal_3=configList[0].mid(2,1);
++    QVariant normal_4=configList[0].mid(3,1);
++    QVariant normal_5=configList[0].mid(4,1);
++
++    emit sig_normalSetting1(normal_1.toBool());
++    emit sig_normalSetting2(normal_2.toBool());
++    emit sig_normalSetting3(normal_3.toBool());
++    emit sig_normalSetting4(normal_4.toBool());
++    emit sig_normalSetting5(normal_5.toBool());
++
+     configList[1] = m_habitWidget->gethabitWidgetConfig();
+     configList[4] = m_slideWidget->getslideWidgetConfig();
+     configList[5] = m_slideWidget->getValue();
+@@ -214,3 +229,19 @@ void setUpDialog::slot_recovery()
+     recovery_label->hide();
+     t_stackedWidget->setCurrentIndex(num);
+ }
++void setUpDialog::slot_cancel()
++{
++    QVariant normal_1=init_normalwidget.mid(0,1);
++    QVariant normal_2=init_normalwidget.mid(1,1);
++    QVariant normal_3=init_normalwidget.mid(2,1);
++    QVariant normal_4=init_normalwidget.mid(3,1);
++    QVariant normal_5=init_normalwidget.mid(4,1);
++
++    emit sig_normalSetting1(normal_1.toBool());
++    emit sig_normalSetting2(normal_2.toBool());
++    emit sig_normalSetting3(normal_3.toBool());
++    emit sig_normalSetting4(normal_4.toBool());
++    emit sig_normalSetting5(normal_5.toBool());
++
++    this->close();
++}
+--- cdos-picturebrowser-1.0.9.orig/src/setupdialog.h
++++ cdos-picturebrowser-1.0.9/src/setupdialog.h
+@@ -218,6 +218,7 @@ signals:
+     void sig_pressed();
+     void sig_sendId(int);
+ 
++
+ public slots:
+ 
+     void slot_cancelBackground()
+@@ -343,9 +344,17 @@ public:
+ public slots:
+     void slot_confirmConfig();
+     void slot_recovery();
++    void slot_cancel();
+ 
+ signals:
+     void sig_sendSlideSetInfo(QString setInfo);
++    void sig_normalSetting1(bool isChecked );
++    void sig_normalSetting2(bool isChecked );
++    void sig_normalSetting3(bool isChecked );
++    void sig_normalSetting4(bool isChecked );
++    void sig_normalSetting5(bool isChecked );
++private:
++    QString init_normalwidget;
+ };
+ 
+ 

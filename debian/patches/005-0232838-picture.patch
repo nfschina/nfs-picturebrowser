@@ -1,0 +1,53 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ cdos-picturebrowser (1.0.9-17) unstable; urgency=low
+ .
+   *修改删除图片后看图软件异常退出.
+Author: feifei <feifei@nfs-hlj.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2017-06-06
+
+--- cdos-picturebrowser-1.0.9.orig/src/bottomwidget.cpp
++++ cdos-picturebrowser-1.0.9/src/bottomwidget.cpp
+@@ -391,18 +391,23 @@ void toolBarWidget::slot_changeOnetoOneI
+         m_one_one->setStyleSheet("QPushButton{background: transparent; border:none; image:url(:/prefix2/2-images/qie_41.png)}"
+                                  "QPushButton:hover{border-image:url(:/prefix2/2-images/hover_small.png);}"
+                                  "QPushButton:pressed{border-image:url(:/prefix2/2-images/pressed_small.png);}");
+-        m_smallToolBar_p->m_one_one->setStyleSheet("QPushButton{background: transparent; border:none; image:url(:/prefix2/2-images/s_41.png)}"
++        m_smallToolBar_p->m_one_one->setStyleSheet("QPushButton{background: transparent; border:none; image:url(:/prefix2/1-images/btn_fullscreen_namal.png)}"
+                                                    "QPushButton:hover{border-image:url(:/prefix2/2-images/s_hover_small.png);}"
+                                                    "QPushButton:pressed{border-image:url(:/prefix2/2-images/s_pressed_small.png);}");
++	m_smallToolBar_p->m_one_one->setToolTip("全屏显示");
++	m_one_one->setToolTip("适应窗口");
+     }
+     else
+     {
+         m_one_one->setStyleSheet("QPushButton{background: transparent; border:none; image:url(:/prefix2/2-images/qie_65.png)}"
+                                  "QPushButton:hover{border-image:url(:/prefix2/2-images/hover_small.png);}"
+                                  "QPushButton:pressed{border-image:url(:/prefix2/2-images/pressed_small.png);}");
+-        m_smallToolBar_p->m_one_one->setStyleSheet("QPushButton{background: transparent; border:none; image:url(:/prefix2/2-images/s_65.png)}"
++        m_smallToolBar_p->m_one_one->setStyleSheet("QPushButton{background: transparent; border:none; image:url(:/prefix2/1-images/btn_fullscreen_namal.png)}"
+                                                    "QPushButton:hover{border-image:url(:/prefix2/2-images/s_hover_small.png);}"
+                                                    "QPushButton:pressed{border-image:url(:/prefix2/2-images/s_pressed_small.png);}");
++         m_smallToolBar_p->m_one_one->setToolTip("全屏显示");
++        m_one_one->setToolTip("实际尺寸");
++
+     }
+ }
+ 
